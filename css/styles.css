@@ -21,16 +21,12 @@ a {
     color: black;
 }
 
-h1 {
-    font-size: 2rem
-}
-
 header {
     top: 0;
     position: fixed;
     z-index: 9999;
     width: 100%;
-    padding: 20px 200px;
+    padding: 20px 150px;
     display: flex;
     justify-content: space-between;
     box-shadow: 0 1px 15px rgba(0, 0, 0, .25);
@@ -59,6 +55,11 @@ nav {
     }
 }
 
+section {
+    margin-left: calc(100px + 2vw);
+    margin-right: calc(100px + 2vw);
+}
+
 #banner {
     display: grid;
     place-items: center;
@@ -66,8 +67,8 @@ nav {
     height: 100dvh;
     background-size: cover;
     background-position: center;
-    padding: 10px;
-    margin: -95px 100px 0;
+    margin-top: -95px;
+    padding-top: 40px;
     gap: 10px;
 }
 
@@ -79,24 +80,24 @@ nav {
 }
 
 .banner-h1 {
-    font-size: 4rem;
+    font-size: calc(100% + 4vw);
     font-weight: bolder;
     color: #59c1ef;
 }
 
 .banner-h2 {
-    font-size: 2.5rem;
+    font-size: calc(100% + 2vw);
     font-weight: bolder;
 }
 
 .banner-p {
     text-wrap: balance;
-    font-size: 1.1rem;
+    font-size: calc(25% + 1vw);
     line-height: 1.5;
 }
 
 .banner-video {
-    width: 800px;
+    width: 90%;
     border-radius: 10px;
     -webkit-box-shadow: 0px 10px 13px -10px rgba(0, 0, 0, 0.45);
     -moz-box-shadow: 0px 10px 13px -10px rgba(0, 0, 0, 0.45);
@@ -109,16 +110,16 @@ nav {
     margin: 0 100px 0;
     display: grid;
     place-items: center;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1.5fr 1fr;
     height: 100dvh;
     background-size: cover;
     background-position: center;
-    margin: -95px 100px 0;
+    margin: 0 100px 0;
     gap: 20px;
 }
 
 .nosotros-video {
-    width: 800px;
+    width: 90%;
     border-radius: 10px;
     -webkit-box-shadow: 0px 10px 13px -10px rgba(0, 0, 0, 0.45);
     -moz-box-shadow: 0px 10px 13px -10px rgba(0, 0, 0, 0.45);
@@ -134,13 +135,13 @@ nav {
 }
 
 .nosotros-h2 {
-    font-size: 3rem;
+    font-size: calc(100% + 2vw);
     color: #59c1ef;
 }
 
 .nosotros-p {
     text-wrap: balance;
-    font-size: 1.1rem;
+    font-size: calc(25% + 1vw);
     line-height: 1.5;
 }
 
@@ -176,40 +177,84 @@ nav {
 footer {
     background-color: black;
     color: white;
-    padding: 30px 50px;
+    padding: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
-    gap: 20px 10px;
+    gap: 30px;
 }
 
-.footer-social {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
+.footer-social,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &:hover > .footer-social-text{
+        border-bottom: 1px solid white;
+    }
+
+    &:hover > .footer-contact-text{
+        border-bottom: 1px solid white;
+    }
 }
-.footer-social-text{
-    grid-column: 1/4;
+
+.footer-logo{
+    display: grid;
+    place-items: center ;
+}
+
+.footer-logo-img{
+    height: 125px;
+}
+
+.footer-social-text,
+.footer-contact-text {
     display: flex;
     align-items: center;
-    text-decoration: underline;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 5px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    transition: 
+            border-bottom .25s;
 }
-.footer-social-icon {
+
+.footer-social-ul,
+.footer-contact-ul {
+    list-style: none;
     display: flex;
+    flex-direction: column;
+}
+
+.footer-social-li,
+.footer-contact-li {
+    padding: 5px;
+    gap: 10px
+}
+
+.footer-social-icon,
+.footer-contact-icon {
+    display: flex;
+    gap: 7.5px;
     align-items: center;
     color: white;
+    align-items: center;
 
     & > svg {
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
     }
+
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
         transition:
             transform .25s;
     }
 }
 
 .footer-copy {
+    padding: 20px 0 0;
     grid-column: 1 / 4;
     text-align: center;
+    font-size: .9rem;
 }
