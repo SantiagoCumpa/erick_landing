@@ -9,6 +9,7 @@
 
 body {
     min-height: 100dvh;
+    margin-top: 95px;
 }
 
 a {
@@ -21,11 +22,15 @@ h1 {
 }
 
 header {
+    top: 0;
+    position: fixed;
+    z-index: 9999;
     width: 100%;
     padding: 20px 200px;
     display: flex;
     justify-content: space-between;
     box-shadow: 0 1px 15px rgba(0, 0, 0, .25);
+    background-color: white;
 
     &>img {
         width: 100px;
@@ -46,45 +51,95 @@ nav {
     &:hover {
         color: #59c1ef;
         transition:
-            color .15s
-        ;
+            color .15s;
     }
 }
 
 #banner {
     display: grid;
-    place-items: center ;
+    place-items: center;
     grid-template-columns: 1fr 1.5fr;
     height: 100dvh;
     background-size: cover;
     background-position: center;
     padding: 10px;
     margin: -95px 100px 0;
+    gap: 10px;
 }
+
 .banner-text {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     justify-content: center;
 }
-.banner-h1{
+
+.banner-h1 {
     font-size: 4rem;
     font-weight: bolder;
+    color: #59c1ef;
 }
-.banner-h2{
-    font-size: 3rem;
-    font-weight: bolder;
 
+.banner-h2 {
+    font-size: 2.5rem;
+    font-weight: bolder;
 }
-.banner-video{
+
+.banner-p {
+    text-wrap: balance;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.banner-video {
     width: 800px;
     border-radius: 10px;
+    -webkit-box-shadow: 0px 10px 13px -10px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 10px 13px -10px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 10px 13px -10px rgba(0, 0, 0, 0.45);
 }
+
 
 #nosotros {
     padding: 10px;
     margin: 0 100px 0;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1.5fr;
+    height: 100dvh;
+    background-size: cover;
+    background-position: center;
+    margin: -95px 100px 0;
+    gap: 20px;
 }
+
+.nosotros-video {
+    width: 800px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 10px 13px -10px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 10px 13px -10px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 10px 13px -10px rgba(0, 0, 0, 0.45);
+}
+
+.nosotros-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.nosotros-h2 {
+    font-size: 3rem;
+    color: #59c1ef;
+}
+
+.nosotros-p {
+    text-wrap: balance;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
 
 #productos {
     display: flex;
